@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>새문법 nullish-coalescing</title>
+    <script>
+      function f1(text) {
+        const print = text ?? alert("똑바로해!"); // 함수도 가능; null, undefined를 잡아냄
+        console.log(print);
+      }
+      function f2(text = "기본값") {
+        // null 은 잡아내지 못함.
+        const print = text;
+        console.log(print);
+      }
+      function f3(text) {
+        const print = text || "or 값이 잡아냄"; // 0값과 false값 까지 출력됨
+        console.log(print);
+      }
+      function f4(text) {
+        const print = text?.split(","); // 옵셔널체이닝 undefined 가 생길 경우 에러안남
+        console.log(print);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
