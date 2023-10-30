@@ -18,9 +18,10 @@
       let winCount = 0;
       let drawCount = 0;
       let loseCount = 0;
+      let comNum;
 
       //   while (true) {
-      const comNum = engine();
+
       // console.log(userNum, comNum);
 
       // const userChoice = prompt("입력하세요.", "가위");
@@ -31,16 +32,19 @@
 
       // else if (userChoice == "가위") userNum = 0;
       function gawi() {
+        comNum = engine();
         userNum = 0;
         gogo();
       }
       // else if (userChoice == "바위") userNum = 1;
       function muk() {
+        comNum = engine();
         userNum = 1;
         gogo();
       }
       // else if (userChoice == "보") userNum = 2;
       function bo() {
+        comNum = engine();
         userNum = 2;
         gogo();
       }
