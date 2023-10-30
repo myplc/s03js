@@ -8,7 +8,7 @@
       function engine() {
         const array = new Uint8Array(2);
         crypto.getRandomValues(array);
-        const ran = array[0] * 3;
+        const ran = array[0] + 1234545;
         const ran2 = ((array[1] + ran) % 45) + 1; // 1 ~ 45
         return ran2;
       }
