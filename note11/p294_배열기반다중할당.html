@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열기반다중할당</title>
+    <script>
+      let [a, b] = [1, 2];
+      console.log(a, b);
+      [a, b] = [b, a];
+      console.log(a, b);
+
+      let arr = [1, 2, 3, 4, 5];
+      const [a1, b1, c1] = arr;
+      console.log(a1, b1, c1);
+    </script>
+  </head>
+  <body></body>
+</html>
