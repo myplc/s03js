@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서객체이동하기 body생략</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const div = document.createElement("div");
+        const div2 = document.createElement("div");
+        const h1 = document.createElement("h1");
+        document.body.append(div, div2); // .x 메소드체이닝 불가, return 없음, text 삽입가능
+        // document.body.appendChild(div2).append(h1) // 메소드체이닝 가능
+        div.innerHTML = `<h1>첫번째 div 태그</h1>`;
+        div2.innerHTML = `<hr><h1>두번째 div 태그</h1>`;
+        h1.textContent = "내부의 h1";
+        const divOn = () => {
+          div.appendChild(h1);
+          setTimeout(div2On, 1000);
+        };
+        const div2On = () => {
+          div2.appendChild(h1);
+          setTimeout(divOn, 1000);
+        };
+        divOn();
+        /* 삭제내용 추가 */
+        h1.addEventListener("click", rm);
+        function rm() {
+          console.log("h1이 눌러졌어요.");
+          div.removeChild(h1);
+        }
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
